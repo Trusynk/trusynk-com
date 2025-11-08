@@ -316,3 +316,8 @@ svg {
     cursor: pointer;
   }
 }
+
+::selection {
+  background: #002fbd;
+  color: #ffffff;
+}
