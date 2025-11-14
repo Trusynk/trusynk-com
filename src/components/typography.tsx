@@ -14,7 +14,7 @@ type LinkTypographyProps = TypographyProps & {
 export const H1 = ({ children, className }: TypographyProps) => {
   return (
     <h1
-      className={cn('text-pretty md:text-[64px] text-blue-11 md:leading-16 font-inter', className)}
+      className={cn('text-pretty md:text-[64px] text-brand-11 md:leading-16 font-inter', className)}
     >
       {children}
     </h1>
@@ -25,7 +25,7 @@ export const P = ({ children, className }: TypographyProps) => {
   return (
     <p
       className={cn(
-        'text-pretty text-lg leading-7 tracking-normal text-blue-11 font-inter',
+        'text-pretty text-lg leading-7 tracking-normal text-brand-11 font-inter',
         className,
       )}
     >
@@ -40,7 +40,7 @@ export const LinkP = ({ children, className, href, target = '_blank' }: LinkTypo
       href={href}
       target={target}
       className={cn(
-        'text-pretty text-lg leading-7 tracking-normal text-blue-11 font-inter underline',
+        'text-pretty text-lg leading-7 tracking-normal text-brand-11 font-inter underline',
         className,
       )}
       rel="noopener noreferrer"
