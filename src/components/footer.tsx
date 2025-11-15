@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer className="p-4 bg-brand-1 w-full">
-      <div className="flex flex-col p-8 h-96 bg-brand-9 rounded-md justify-between border-4 border-red-400 items-center">
+      <div className="flex flex-col p-8 h-96 bg-brand-9 rounded-md justify-between items-center">
         <div className="w-full justify-between items-start flex flex-col md:flex-row">
           <Logo isWhite />
           <div className="flex md:flex-row flex-col gap-24">
