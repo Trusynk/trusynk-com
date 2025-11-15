@@ -19,8 +19,8 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata = {
   description:
-    'Trusynkis your gateway to modern networking. Smart, sustainable, and effortless way to share your identity through tap, scan, or link.',
-  title: 'Trusynk | Your Gateway to Modern Networking',
+    'Trusynk is the future of professional connectivity. Elevate your network with smart NFC cards, analytics, and an ecosystem built to take you beyond networking.',
+  title: 'Trusynk | Beyond Networking',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
