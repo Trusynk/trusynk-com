@@ -17,8 +17,8 @@ export default function Hero(): React.ReactElement {
           <span className="font-normal italic font-playfair-display">Outdated.</span>
         </H1>
         <P className="font-normal">
-          <strong>Trusynk</strong> is your gateway to modern networking. Smart, sustainable, and
-          effortless way to share your identity through tap, scan, or link.
+          A next-generation networking platform that streamlines how professionals connect, share,
+          and build meaningful partnerships.
         </P>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
           <Button asChild className="capitalize rounded-4xl w-64 max-w-2xl md:w-auto">
