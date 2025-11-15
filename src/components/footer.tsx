@@ -11,7 +11,7 @@ const Footer = () => {
   const id = useId()
 
   return (
-    <footer className="p-4 bg-brand-1 w-full">
+    <footer className="p-4 bg-brand-1 w-full mt-24">
       <div className="flex flex-col p-8 h-96 bg-brand-9 rounded-md justify-between items-center">
         <div className="w-full justify-between items-start flex flex-col md:flex-row">
           <Logo isWhite />
