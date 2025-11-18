@@ -14,7 +14,10 @@ const Footer = () => {
     <footer className="p-4 bg-brand-1 w-full mt-24">
       <div className="flex flex-col p-8 h-96 bg-brand-9 rounded-md justify-between items-center">
         <div className="w-full justify-between items-start flex flex-col md:flex-row">
-          <Logo isWhite />
+          <div className="flex flex-col w-64 gap-2">
+            <Logo isWhite />
+            <P className="text-xs text-white">Trusynk — Beyond Networking.</P>
+          </div>
           <div className="flex md:flex-row flex-col gap-24">
             <div className="flex flex-col gap-2 justify-center items-start">
               {HEADER_MENU.map((item) => (
@@ -37,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex md:flex-row w-full justify-between items-center align-middle">
-          <span className="text-xs text-gray-8">©2025 Trusynk. All rights reserved.</span>
+          <P className="text-xs text-gray-8">©2025 Trusynk. All rights reserved.</P>
           <Link
             href="https://drive.google.com/drive/folders/1HRfluXVP85fSSaiHl5Cx_NHDzrpbrPuM?usp=sharing"
             target="_blank"
