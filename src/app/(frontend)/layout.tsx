@@ -27,11 +27,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html
-      lang="en"
-      className={`${inter.className} ${playfairDisplay.className} h-screen min-w-screen`}
-    >
-      <body className="bg-blue-1">
+    <html lang="en">
+      <body
+        className={`${inter.className} ${playfairDisplay.className} bg-brand-1 h-screen min-w-screen overflow-x-hidden scroll-smooth`}
+      >
         <main>{children}</main>
       </body>
     </html>
