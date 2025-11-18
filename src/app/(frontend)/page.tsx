@@ -1,4 +1,5 @@
 import Hero from '@/components/hero'
+// @ts-ignore: side-effect import for global CSS without type declarations
 import './globals.css'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
