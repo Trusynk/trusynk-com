@@ -32,6 +32,19 @@ export const H2 = ({ children, className }: TypographyProps) => {
   )
 }
 
+export const H3 = ({ children, className }: TypographyProps) => {
+  return (
+    <h3
+      className={cn(
+        'text-pretty text-2xl text-brand-11 leading-8 font-inter tracking-tight font-bold',
+        className,
+      )}
+    >
+      {children}
+    </h3>
+  )
+}
+
 export const P = ({ children, className }: TypographyProps) => {
   return (
     <p
