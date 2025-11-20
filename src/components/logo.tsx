@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type LogoProps = {
   width?: number
@@ -10,21 +11,25 @@ type LogoProps = {
 
 const Logo = ({ width = 128, height = 128, className, isWhite = false }: LogoProps) => {
   return isWhite ? (
-    <Image
-      src="/logo-white.svg"
-      alt="Trusynk with logo"
-      width={width}
-      height={height}
-      className={cn('object-contain', className)}
-    />
+    <Link href="/" aria-label="Home">
+      <Image
+        src="/logo-white.svg"
+        alt="Trusynk with logo"
+        width={width}
+        height={height}
+        className={cn('object-contain', className)}
+      />
+    </Link>
   ) : (
-    <Image
-      src="/logo-blue.svg"
-      alt="Trusynk with logo"
-      width={width}
-      height={height}
-      className={cn('object-contain', className)}
-    />
+    <Link href="/" aria-label="Home">
+      <Image
+        src="/logo-blue.svg"
+        alt="Trusynk with logo"
+        width={width}
+        height={height}
+        className={cn('object-contain', className)}
+      />
+    </Link>
   )
 }
 
