@@ -7,7 +7,10 @@ import { Badge } from './ui/badge'
 
 export default function Hero(): React.ReactElement {
   return (
-    <section id="hero" className="relative flex items-center justify-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative w-screen p-8 md:p-16 flex flex-col items-center justify-center overflow-hidden"
+    >
       <div className="flex flex-col items-center justify-center text-center md:w-2xl gap-4">
         <Badge variant="default" className="bg-yellow-400 text-yellow-900">
           <Info /> Trusynk is still on development.
@@ -34,10 +37,8 @@ export default function Hero(): React.ReactElement {
             learn more <ArrowRight />
           </Button>
         </div>
-        <P className="font-normal text-xs">
-          <span className="text-gray-10">
-            Be the first to experience the future of smart networking.{' '}
-          </span>
+        <P className="font-normal text-xs text-gray-10">
+          Be the first to experience the future of smart networking.{' '}
           <LinkP href="" className="text-xs font-normal text-brand-11">
             Join waitlist
           </LinkP>
