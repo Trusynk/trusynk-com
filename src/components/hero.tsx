@@ -9,7 +9,7 @@ export default function Hero(): React.ReactElement {
   return (
     <section
       id="hero"
-      className="relative w-screen p-8 md:p-16 flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-screen p-8 md:p-16 flex flex-col items-center justify-center overflow-hidden mt-32"
     >
       <div className="flex flex-col items-center justify-center text-center md:w-2xl gap-4">
         <Badge variant="default" className="bg-yellow-400 text-yellow-900">
