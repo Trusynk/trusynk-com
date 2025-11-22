@@ -25,11 +25,7 @@ export default function Hero(): React.ReactElement {
         </P>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
           <Button asChild className="capitalize rounded-4xl w-64 max-w-2xl md:w-auto">
-            <Link
-              href="https://forms.gle/KvckQpHKZu3zWQzf9"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://app.trusynk.com/" target="_blank" rel="noopener noreferrer">
               <Rocket /> Get your card
             </Link>
           </Button>
