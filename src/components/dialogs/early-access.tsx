@@ -62,13 +62,35 @@ const EarlyAccess = () => {
     try {
       setIsLoading(true)
 
-      const { error } = await supabase.from('early_access_forms').insert({
+      const { data: existingUser, error: checkError } = await supabase
+        .from('early_access_forms')
+        .select('email')
+        .eq('email', data.email)
+        .single()
+
+      if (checkError && checkError.code !== 'PGRST116') {
+        throw checkError
+      }
+
+      if (existingUser) {
+        toast.error('Already Registered! 🎉', {
+          description: "You're already on the list! Check your email for updates.",
+        })
+        return
+      }
+
+      const { error: insertError } = await supabase.from('early_access_forms').insert({
         name: data.name,
         email: data.email,
         is_checked: data.isChecked,
       })
 
-      if (error) throw error
+      if (insertError && insertError.code === '23505') {
+        toast.error("You're email were on the list", {
+          description: 'Check your email for updates.',
+        })
+        throw insertError
+      }
 
       toast.success("You're in! Early access secured. 🚀", {
         description: "Thanks — you're in. Follow us on LinkedIn for updates. Big things coming.",
@@ -79,15 +101,21 @@ const EarlyAccess = () => {
       form.reset()
       setTimeout(() => {
         setOpen(false)
-        setIsLoading(false)
-
         router.push(`/welcome?name=${encodeURIComponent(firstName)}`)
       }, 1500)
-    } catch (error) {
-      console.error('Database Error', error)
+    } catch (error: any) {
+      let errorMessage = 'Submission failed. Please try again later.'
+
+      if (error?.message?.includes('duplicate') || error?.code === '23505') {
+        errorMessage = 'This email is already registered!'
+      } else if (error?.message?.includes('network')) {
+        errorMessage = 'Network error. Please check your connection.'
+      }
+
       toast.error('Submission Failed', {
-        description: 'Submission failed. Please try again later.',
+        description: errorMessage,
       })
+    } finally {
       setIsLoading(false)
     }
   }
