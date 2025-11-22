@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Button } from './ui/button'
 import { SiInstagram, SiThreads, SiTiktok, SiWhatsapp, SiX } from '@icons-pack/react-simple-icons'
 import { Mail } from 'lucide-react'
-import Image from 'next/image'
+import { Linkedin } from 'iconoir-react'
 
 const Socmed = () => {
   return (
@@ -18,7 +18,7 @@ const Socmed = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src="/linked-in.png" width={20} height={20} alt="LinkedIn Logo" />
+          <Linkedin />
         </Link>
       </Button>
       <Button asChild size="icon" variant="ghost" className="text-white text-xs">
