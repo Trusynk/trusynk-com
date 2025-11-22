@@ -5,5 +5,6 @@ export const EarlyAccessForm: CollectionConfig = {
   fields: [
     { name: 'name', type: 'text', required: true, maxLength: 255, label: 'Name' },
     { name: 'email', type: 'email', required: true, unique: true, label: 'Email' },
+    { name: 'isChecked', type: 'checkbox', required: true, label: 'Accept Privacy Policy' },
   ],
 }

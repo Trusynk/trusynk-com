@@ -169,6 +169,7 @@ export interface EarlyAccessForm {
   id: string;
   name: string;
   email: string;
+  isChecked: boolean;
   updatedAt: string;
   createdAt: string;
 }
@@ -298,6 +299,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface EarlyAccessFormsSelect<T extends boolean = true> {
   name?: T;
   email?: T;
+  isChecked?: T;
   updatedAt?: T;
   createdAt?: T;
 }
