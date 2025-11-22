@@ -2,6 +2,7 @@ import React from 'react'
 // @ts-ignore: side-effect import for global CSS without type declarations
 import './globals.css'
 import { Inter, Playfair_Display } from 'next/font/google'
+import { Toaster } from '@/components/ui/sonner'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -32,7 +33,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
       <body
         className={`${inter.className} ${playfairDisplay.className} bg-brand-1 h-screen min-w-screen overflow-x-hidden scroll-smooth`}
       >
-        <main>{children}</main>
+        <main>
+          {children}
+          <Toaster />
+        </main>
       </body>
     </html>
   )
