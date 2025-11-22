@@ -19,7 +19,7 @@ const Header = () => {
         <SheetTrigger asChild>
           <Button variant="outline">
             <MenuIcon />
-            Menu
+            <span className="hidden md:block">Menu</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-full bg-brand-9 border-none p-0">
@@ -59,7 +59,10 @@ const Header = () => {
       </Sheet>
 
       {/* Logo */}
-      <Logo isWhite={false} />
+      <div className="md:block hidden">
+        <Logo isWhite={false} />
+        <span className="hidden sr-only">Trusynk</span>
+      </div>
 
       {/* CTA */}
       <EarlyAccess />
