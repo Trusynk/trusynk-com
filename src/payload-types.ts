@@ -70,6 +70,7 @@ export interface Config {
     users: User;
     media: Media;
     'early-access-forms': EarlyAccessForm;
+    'content-feedback': ContentFeedback;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -80,6 +81,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'early-access-forms': EarlyAccessFormsSelect<false> | EarlyAccessFormsSelect<true>;
+    'content-feedback': ContentFeedbackSelect<false> | ContentFeedbackSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -174,6 +176,57 @@ export interface EarlyAccessForm {
   createdAt: string;
 }
 /**
+ * User feedback collected from various parts of the website
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "content-feedback".
+ */
+export interface ContentFeedback {
+  id: string;
+  /**
+   * Type of feedback received
+   */
+  feedback_type: 'positive' | 'negative';
+  /**
+   * The type of content being rated (e.g., faq, blog, feature, page)
+   */
+  content_type: string;
+  /**
+   * Optional identifier for specific content (e.g., article slug, page ID)
+   */
+  content_id?: string | null;
+  /**
+   * Optional user message providing detailed feedback
+   */
+  message?: string | null;
+  /**
+   * URL where feedback was submitted
+   */
+  page_url?: string | null;
+  /**
+   * Additional contextual information stored as JSON
+   */
+  metadata?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  /**
+   * Browser/device information
+   */
+  user_agent?: string | null;
+  /**
+   * IP address of the user (if available)
+   */
+  ip_address?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -208,6 +261,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'early-access-forms';
         value: string | EarlyAccessForm;
+      } | null)
+    | ({
+        relationTo: 'content-feedback';
+        value: string | ContentFeedback;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -300,6 +357,22 @@ export interface EarlyAccessFormsSelect<T extends boolean = true> {
   name?: T;
   email?: T;
   isChecked?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "content-feedback_select".
+ */
+export interface ContentFeedbackSelect<T extends boolean = true> {
+  feedback_type?: T;
+  content_type?: T;
+  content_id?: T;
+  message?: T;
+  page_url?: T;
+  metadata?: T;
+  user_agent?: T;
+  ip_address?: T;
   updatedAt?: T;
   createdAt?: T;
 }
