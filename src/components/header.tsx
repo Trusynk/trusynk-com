@@ -48,12 +48,13 @@ const Header = () => {
 
           {/* Footer Section */}
           <SheetFooter className="absolute bottom-8 left-8 right-8">
-            <Button variant="secondary" className="w-full" asChild>
+            {/* <Button variant="secondary" className="w-full" asChild>
               <Link href="https://app.trusynk.com">
                 Go to App
                 <ArrowRight />
               </Link>
-            </Button>
+            </Button> */}
+            <EarlyAccess />
           </SheetFooter>
         </SheetContent>
       </Sheet>
