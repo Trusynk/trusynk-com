@@ -5,6 +5,7 @@ import { H1, P, H3 } from './typography'
 import { Button } from './ui/button'
 import { FAQ_ITEMS } from '@/data/faq-items'
 import { categorizeFAQs } from '@/lib/faq-utils'
+import Feedback from './feedback'
 
 const CategorizedFAQ = () => {
   const categories = categorizeFAQs(FAQ_ITEMS)
@@ -39,7 +40,10 @@ const CategorizedFAQ = () => {
                   {category.items.map((item) => (
                     <AccordionItem key={item.id} value={item.id}>
                       <AccordionTrigger className="text-brand-12">{item.question}</AccordionTrigger>
-                      <AccordionContent className="text-gray-11">{item.answer}</AccordionContent>
+                      <AccordionContent className="text-gray-11 flex flex-col items-start gap-4 justify-start">
+                        {item.answer}
+                        <Feedback contentType="faq" question="Was this conversation helpful?" />
+                      </AccordionContent>
                     </AccordionItem>
                   ))}
                 </Accordion>
