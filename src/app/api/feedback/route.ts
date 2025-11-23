@@ -13,11 +13,39 @@ export async function POST(request: NextRequest) {
     }
 
     // Get IP address from Next.js request
-    const ip =
-      request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
-      request.headers.get('x-real-ip') ||
-      request.headers.get('cf-connecting-ip') ||
-      'unknown'
+    const getClientIp = (): string => {
+      const forwardedFor = request.headers.get('x-forwarded-for')
+
+      if (forwardedFor) {
+        const ips = forwardedFor.split(',').map((ip) => ip.trim())
+
+        return ips[0] || 'unknown'
+      }
+
+      const realIp = request.headers.get('x-real-ip')
+
+      if (realIp) return realIp.trim()
+
+      const cfIp = request.headers.get('cf-connecting-ip')
+
+      if (cfIp) return cfIp.trim()
+
+      // Next.js 13+ app router - try to get from request.ip or socket
+
+      const ip = (request as any).ip || (request as any).socket?.remoteAddress
+
+      if (ip) {
+        // Normalize IPv6 localhost to IPv4
+
+        if (ip === '::1' || ip === '::ffff:127.0.0.1') return '127.0.0.1'
+
+        return ip
+      }
+
+      return 'unknown'
+    }
+
+    const ip = getClientIp()
 
     // Get user agent
     const userAgent = request.headers.get('user-agent') || 'unknown'
