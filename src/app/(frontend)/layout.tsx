@@ -1,4 +1,3 @@
-import React from 'react'
 // @ts-ignore: side-effect import for global CSS without type declarations
 import './globals.css'
 import { Inter, Playfair_Display } from 'next/font/google'
