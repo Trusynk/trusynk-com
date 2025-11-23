@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import {
   CircleCheckIcon,
@@ -6,32 +6,35 @@ import {
   Loader2Icon,
   OctagonXIcon,
   TriangleAlertIcon,
-} from "lucide-react"
-import { useTheme } from "next-themes"
-import { Toaster as Sonner, type ToasterProps } from "sonner"
+} from 'lucide-react'
+import { Toaster as Sonner, type ToasterProps } from 'sonner'
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme()
-
   return (
     <Sonner
-      theme={theme as ToasterProps["theme"]}
       className="toaster group"
+      position="bottom-right"
       icons={{
-        success: <CircleCheckIcon className="size-4" />,
-        info: <InfoIcon className="size-4" />,
-        warning: <TriangleAlertIcon className="size-4" />,
-        error: <OctagonXIcon className="size-4" />,
-        loading: <Loader2Icon className="size-4 animate-spin" />,
+        success: <CircleCheckIcon className="size-5" />,
+        info: <InfoIcon className="size-5" />,
+        warning: <TriangleAlertIcon className="size-5" />,
+        error: <OctagonXIcon className="size-5" />,
+        loading: <Loader2Icon className="size-5 animate-spin" />,
       }}
-      style={
-        {
-          "--normal-bg": "var(--popover)",
-          "--normal-text": "var(--popover-foreground)",
-          "--normal-border": "var(--border)",
-          "--border-radius": "var(--radius)",
-        } as React.CSSProperties
-      }
+      toastOptions={{
+        style: {
+          borderRadius: '12px',
+          padding: '16px',
+          fontSize: '14px',
+        },
+        classNames: {
+          success: '!bg-green-50 !text-green-900 !border !border-green-300 [&>svg]:!text-green-600',
+          error: '!bg-red-50 !text-red-900 !border !border-red-300 [&>svg]:!text-red-600',
+          warning: '!bg-amber-50 !text-amber-900 !border !border-amber-300 [&>svg]:!text-amber-600',
+          info: '!bg-blue-50 !text-blue-900 !border !border-blue-300 [&>svg]:!text-blue-600',
+          loading: '!bg-gray-50 !text-gray-900 !border !border-gray-300 [&>svg]:!text-gray-600',
+        },
+      }}
       {...props}
     />
   )
