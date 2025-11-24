@@ -13,7 +13,7 @@ const Header = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="flex flex-row py-4 px-8 shadow-lg w-full justify-between mb-24 absolute top-0 z-50 bg-brand-1">
+    <header className="flex flex-row py-4 px-8 shadow-lg w-full justify-between mb-24 fixed top-0 z-50 bg-brand-1">
       {/* Menu Sheet */}
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
