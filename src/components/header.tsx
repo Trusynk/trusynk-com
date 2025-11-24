@@ -27,7 +27,9 @@ const Header = () => {
           <SheetHeader className="p-8 pb-4">
             <div className="flex items-center justify-between">
               <SheetTitle className="text-brand-1">
-                <Logo isWhite={true} />
+                <Link href="/" onClick={() => setOpen(false)}>
+                  <Logo isWhite={true} />
+                </Link>
               </SheetTitle>
             </div>
           </SheetHeader>
