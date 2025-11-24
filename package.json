@@ -20,6 +20,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@icons-pack/react-simple-icons": "^13.8.0",
+    "@next/third-parties": "^16.0.3",
     "@payloadcms/db-postgres": "3.62.1",
     "@payloadcms/next": "3.62.1",
     "@payloadcms/richtext-lexical": "3.62.1",
