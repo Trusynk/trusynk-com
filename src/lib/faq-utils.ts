@@ -1,5 +1,6 @@
 import { CATEGORY_RULES } from '@/data/category-rules'
 import type { CategorizedFAQItem, FAQCategory, FAQProps } from '@/types/faq'
+import { randomUUID } from 'node:crypto'
 
 /**
  * Create a URL-friendly slug from text
@@ -15,23 +16,12 @@ function createSlug(text: string): string {
 }
 
 /**
- * Generate a deterministic hash-based ID from question text
- * This replaces randomUUID() to avoid Next.js 16 prerender issues
+ * Generate a hybrid ID: slug + short UUID
  */
 function makeHybridId(question: string): string {
   const slug = createSlug(question)
-
-  // Create a simple hash from the question text for deterministic IDs
-  let hash = 0
-  for (let i = 0; i < question.length; i++) {
-    const char = question.charCodeAt(i)
-    hash = (hash << 5) - hash + char
-    hash = hash & hash // Convert to 32-bit integer
-  }
-
-  // Convert to positive hex string (8 chars)
-  const shortHash = Math.abs(hash).toString(16).padStart(8, '0').substring(0, 8)
-  return `${slug}-${shortHash}`
+  const shortUuid = randomUUID().split('-')[0] // Take first segment (8 chars)
+  return `${slug}-${shortUuid}`
 }
 
 export function categorizeFAQItem(faq: FAQProps): CategorizedFAQItem {
