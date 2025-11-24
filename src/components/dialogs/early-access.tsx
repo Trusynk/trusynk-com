@@ -200,7 +200,12 @@ const EarlyAccess = () => {
             </form>
           </Form>
           <DialogFooter>
-            <Button type="submit" form="early-access-form" disabled={!isFormValid || isLoading}>
+            <Button
+              type="submit"
+              form="early-access-form"
+              disabled={!isFormValid || isLoading}
+              className="disabled:cursor-not-allowed"
+            >
               {isLoading ? (
                 <>
                   <Spinner />
