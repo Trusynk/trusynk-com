@@ -20,15 +20,15 @@ function createSlug(text: string): string {
  */
 function makeHybridId(question: string): string {
   const slug = createSlug(question)
-  
+
   // Create a simple hash from the question text for deterministic IDs
   let hash = 0
   for (let i = 0; i < question.length; i++) {
     const char = question.charCodeAt(i)
-    hash = ((hash << 5) - hash) + char
+    hash = (hash << 5) - hash + char
     hash = hash & hash // Convert to 32-bit integer
   }
-  
+
   // Convert to positive hex string (8 chars)
   const shortHash = Math.abs(hash).toString(16).padStart(8, '0').substring(0, 8)
   return `${slug}-${shortHash}`
