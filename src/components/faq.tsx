@@ -18,13 +18,13 @@ const FAQ = () => {
     >
       <div className="flex flex-col gap-4 w-full">
         <H2 className="text-center">Got questions? We&apos;ve got you.</H2>
-        <P className="text-center text-sm md:text-base max-w-2xl mx-auto">
+        <P className="text-center text-gray-11 text-sm md:text-base max-w-2xl mx-auto">
           Find clear, friendly answers to help you get the most out of Trusynk. No pressure, no
           confusion — just simple guidance to keep your networking flow smooth. And if you ever need
           more help, we&apos;re always here for you.
         </P>
       </div>
-      
+
       <Accordion type="single" collapsible className="w-full max-w-3xl">
         {topFaqs.map((item, index) => (
           <AccordionItem key={`${id}-${index}`} value={`${id}-${index}`}>
@@ -33,7 +33,7 @@ const FAQ = () => {
           </AccordionItem>
         ))}
       </Accordion>
-      
+
       <div className="flex flex-col items-center gap-4 mt-4">
         <H3 className="text-center">Have more questions?</H3>
         <div className="flex flex-col sm:flex-row gap-4">
