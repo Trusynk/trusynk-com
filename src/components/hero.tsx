@@ -16,25 +16,25 @@ export default function Hero(): React.ReactElement {
           <Info /> Trusynk is still on development.
         </Badge>
         <H1>
-          <span className="font-light italic">Networking Shouldn&apos;t Feel </span>
-          <span className="font-normal italic font-playfair-display">Outdated.</span>
+          <span className="font-light italic">Turn Real-World Conversations into Pipeline </span>
+          <span className="font-normal italic font-playfair-display">Automatically.</span>
         </H1>
-        <P className="font-normal">
-          A next-generation networking platform that streamlines how professionals connect, share,
-          and build meaningful partnerships.
+        <P className="font-normal text-gray-11">
+          One platform that captures contacts, enriches data, and pushes everything straight into
+          your pipeline.
         </P>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
           <Button asChild className="capitalize rounded-4xl w-64 max-w-2xl md:w-auto">
             <Link href="https://app.trusynk.com/" target="_blank" rel="noopener noreferrer">
-              <Rocket /> Get your card
+              <Rocket /> Start capturing leads
             </Link>
           </Button>
           <Button variant="outline" className="capitalize rounded-4xl max-w-2xl w-64 md:w-auto">
-            learn more <ArrowRight />
+            see how it works <ArrowRight />
           </Button>
         </div>
-        <P className="font-normal text-xs text-gray-10">
-          Be the first to experience the future of smart networking.{' '}
+        <P className="font-normal text-xs text-gray-11">
+          Stop losing leads. Start tapping.{' '}
           <LinkP href="" className="text-xs font-normal text-brand-11">
             Join waitlist
           </LinkP>
