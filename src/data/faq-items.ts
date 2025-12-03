@@ -4,84 +4,81 @@ export const FAQ_ITEMS: FAQProps[] = [
   {
     question: 'What is Trusynk?',
     answer:
-      'Trusynk is a modern networking SaaS that gives you a dynamic digital profile and pairs it with an NFC-powered card. It replaces outdated business cards with a smarter, always-updated, instantly shareable identity built for real-world and digital connections.',
+      'Trusynk automates what happens after networking. Instead of focusing on the handshake, it captures interactions, enriches contact data, and routes qualified leads straight into your pipeline—automatically—so you don’t waste time manually transferring or chasing contacts.',
   },
   {
-    question: 'Do I need the physical NFC card to use Trusynk?',
+    question: 'Do I need a physical NFC card to use Trusynk?',
     answer:
-      'No. You can sign up for free first. The card is optional — it simply makes sharing faster and more professional. You can share your profile via a custom link or QR code without the card.',
+      'No. The physical NFC card is optional. It speeds up sharing during events, but Trusynk’s core value is post-networking automation: any shared link, QR scan, or manual import will be captured, enriched, and sent into your workflow the same way.',
   },
   {
-    question: 'How does the NFC card work?',
+    question: 'How does Trusynk capture interactions after an event?',
     answer:
-      'Just tap the card to any NFC-enabled phone. Your Trusynk profile opens instantly without apps or friction.',
+      'Every tap, QR scan, or profile share is recorded as an interaction. Trusynk automatically enriches that contact (email, company, role, social handles where available), tags the interaction by source/event, and triggers configured follow-up workflows or pushes the contact to your CRM.',
   },
   {
-    question: 'What do I get with the Trusynk subscription?',
+    question: 'What automation happens by default after a contact is captured?',
     answer:
-      'You get access to a personalized digital profile, smart analytics, and advanced networking features. The physical card is sold separately.',
+      'By default Trusynk logs the interaction, enriches the contact, creates a contact record, and queues it for follow-up. You can enable automated email nudges, assign leads to team members, add event tags, or push contacts into your CRM via webhook or native integrations.',
   },
   {
-    question: 'Can I customize the card design?',
-    answer: 'Yes. You can use Trusynk’s default design or upload your own custom design.',
-  },
-  {
-    question: 'Who is Trusynk for?',
+    question: 'How does Trusynk improve lead follow-up and conversion?',
     answer:
-      'Trusynk is perfect for professionals, entrepreneurs, and businesses looking to make a lasting impression and streamline their networking process.',
+      'It removes manual friction: contacts arrive clean, enriched, and categorized. Automated follow-ups and assignment rules mean you engage while interest is hot—improving response rates and converting more conversations into opportunities.',
   },
   {
-    question: 'How fast can I get my card?',
+    question: 'Can Trusynk send captured leads directly to our CRM or marketing tools?',
     answer:
-      'Production typically starts once your order is confirmed. Delivery timelines vary based on location, but we keep you updated every step of the way.',
+      'Yes. Trusynk supports CSV export, webhooks, and native or partner integrations for major CRMs and automation tools. For enterprise customers we offer deeper connectors, API access, and custom integration work.',
   },
   {
-    question: 'Can businesses order in bulk for their team?',
+    question: 'What analytics will I see for post-networking performance?',
     answer:
-      'Yes, companies can order in bulk, customize their card designs, and deploy unified profiles for their entire team.',
+      'You get engagement metrics like contacts captured per event, conversion rates, time-to-first-follow-up, source attribution, top performing events, and team response times. Premium tiers include cohort analysis, funnel reports, and exportable dashboards.',
   },
   {
-    question: 'Is my information secure with Trusynk?',
+    question: 'How accurate is the contact enrichment?',
     answer:
-      'Yes. We prioritize your privacy and data security, employing industry-standard measures to protect your information. Only the information you choose to make public will be displayed on your profile.',
+      'Enrichment is probabilistic and sourced from public signals; accuracy improves with more data (email, company website). We surface confidence scores and let you review or override enriched fields before they sync to downstream systems.',
   },
   {
-    question: 'Does the card work with all phones?',
+    question: 'Who can view a shared Trusynk profile?',
     answer:
-      'The NFC card is compatible with most modern smartphones that support NFC technology, including both iOS and Android devices. Older devices can scan your QR code instead.',
+      'Anyone can view public profile fields via link, tap, or QR without creating an account. Private fields, gated content, or actions (like claiming resources) can require sign-up or verification based on your privacy settings.',
   },
   {
-    question: 'Can I update my profile information after creating it?',
+    question: 'Can teams use Trusynk to manage event leads at scale?',
     answer:
-      'Yes, you can update your profile information anytime through the Trusynk dashboard. Changes are reflected instantly when you share your profile.',
+      'Yes. Teams can provision multiple cards, centralize captured leads, apply shared tags and automations, and distribute leads to reps with assignment rules. Bulk ordering, branded templates, and team admin controls are available for organizational rollout.',
   },
   {
-    question: 'What happens if I lose my card?',
-    answer: 'Your account remains active, and you can simply order a replacement card anytime.',
-  },
-  {
-    question: 'Do recipients need a Trusynk account to view my profile?',
+    question: 'What happens if I lose my card or need to deactivate it?',
     answer:
-      'Trusynk profiles are publicly accessible via link or NFC tap, so recipients do not need an account to view your information. But some informations are hidden if you are not logged in.',
+      'Losing a card does not affect your account or past captures. You can remotely deactivate a card from the dashboard, provision a replacement, and instantly reassign profiles to a new card so the post-networking pipeline stays intact.',
   },
   {
-    question: 'How does Trusynk improve networking?',
+    question: 'How long before I see captured leads appear in my workflow?',
     answer:
-      'It eliminates friction by offering instant sharing, zero reprints, real-time updates, and smart analytics to measure engagement.',
+      'Captures and basic enrichment appear within seconds to minutes. Deeper enrichment or third-party lookups may take slightly longer. All captures are timestamped so you can measure time-to-first-follow-up precisely.',
   },
   {
-    question: 'What analytics are available?',
+    question: 'Is my data secure and compliant?',
     answer:
-      'Depending on your plan, you can track profile views, button clicks, traffic sources, device types, and overall engagement behavior.',
+      'Yes. Trusynk uses HTTPS/TLS for data in transit, encryption at rest, role-based access controls, and regular security reviews. We allow you to control which fields are public and provide enterprise options like SSO, SCIM, and stricter data retention policies on request.',
   },
   {
-    question: 'Do recipients need a Trusynk account to view my profile?',
+    question: 'Which devices and fallback options are supported?',
     answer:
-      'Anyone can open your profile instantly, but certain details and actions are only visible after they sign up or log in for a more secure and personalized experience.',
+      'Most modern iOS and Android devices with NFC will open a profile on tap. For devices without NFC or older phones, recipients can scan a QR code or open a shared link—Trusynk captures those interactions identically so your pipeline remains consistent.',
   },
   {
-    question: 'Does Trusynk integrate with other tools?',
+    question: 'How do I get started and what support is available?',
     answer:
-      'We support basic syncing today and are expanding into CRM and automation integrations to streamline your workflow.',
+      'Sign up for an account, create your digital profile, and choose your sharing method (card, link, or QR). We provide onboarding docs, templates for event setups, and email support. Enterprise customers receive priority onboarding and optional implementation assistance.',
+  },
+  {
+    question: 'How can I order cards in bulk or request enterprise features?',
+    answer:
+      'For bulk orders, custom branding, SSO, API access, or enterprise SLAs, contact our sales team via “Request a Demo” or “Talk to Sales.” We handle volume pricing, provisioning, and custom integration work for enterprise deployments.',
   },
 ]
